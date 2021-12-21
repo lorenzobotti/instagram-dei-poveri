@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hello Bulma!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-brand"></div>
+            <div class="navbar-menu">
+                <a class="navbar-item" href="index.html">home</a>
+            </div>
+            <div class="navbar-end">
+                <div class="level" id="not-logged">
+                    <div class="level-right">
+                        <a href="signup.html" class="level-item button is-primary navbar-item">subscribe</a>
+                        <a href="login.html" class="level-item button navbar-item">log in</a>
+                    </div>
+                </div>
+
+
+                <div class="level" id="logged" style="display: none;">
+                    <div class="level-left">
+                        <span class="level-item navbar-item">Welcome, <strong id="welcome-username">usernaem</strong></span>
+                    </div>
+                    <div class="level-right">
+                        <a href="upload.html" class="level-item button is-primary navbar-item">new post</a>
+                        <a href="login.html" class="level-item button navbar-item">log out</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+
+        <section class="hero is-danger is-fullheight-with-navbar">
+            <div class="hero-body">
+                <form class="box" id="upload-form">
+                    <div class="field">
+                        <label for="contents" class="label">contents</label>
+                        <div class="control">
+                            <input type="text" class="input" name="contents">
+                        </div>
+                    </div>
+
+                    <div class="field">
+
+                        <label for="image" class="label">image</label>
+                        <div class="file">
+                            <label class="file-label">
+                                <input class="file-input" type="file" name="image">
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choose a file…
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                        
+                    <div class="field">
+                        <div class="control">
+                            <button id="post-button" class="button">upload</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+    <script src="check_login.js"></script>
+    <script src="upload.js"></script>
+</html>

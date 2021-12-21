@@ -1,0 +1,1 @@
+questo frontend l'ho fatto due ore prima di presentarlo, le mie scuse se è un pò scarno

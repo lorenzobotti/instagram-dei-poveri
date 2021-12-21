@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  app:
+    build: 
+      context: ./better_backend
+      target: dev
+    ports:
+      - 80:80
+    links:
+      - db
+      - images_db
+    environment:
+      PORT: 80
+      JWT_KEY: hamburger
+      DB_USERNAME: root
+      DB_PASSWORD: hamburger
+    volumes:
+      - ./better_backend:/usr/app/
+
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_USERNAME: root
+      MONGO_INITDB_PASSWORD: hamburger
+
+  images_db:
+    build:
+      context: ./bin_db
+      target: dev
+    environment:
+      PORT: 80
+      DB_FOLDER: /db
+    ports:
+      - 8080:80   # solo per sviluppo, da rimuovere in prod
+    volumes:
+      - ./bin_db:/usr/app
+
+volumes:
+  data:
+  images:
