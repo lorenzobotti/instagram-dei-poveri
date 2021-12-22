@@ -1,0 +1,442 @@
+{
+	"info": {
+		"_postman_id": "735e4fc8-a4a9-4e72-937f-16775f9dbeed",
+		"name": "instagram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/users",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/users/username/quanted",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"users",
+						"username",
+						"quanted"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "log in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"hamburger\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:80/private/login/quanted",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"private",
+						"login",
+						"quanted"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"mammamia\",\n    \"fullName\": \"Chris Botti\",\n    \"email\": \"bottigiacomo2@gmail.com\",\n    \"password\": \"hamburger\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:80/users",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/posts/61c02fa4599820e7c6a5502a",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"posts",
+						"61c02fa4599820e7c6a5502a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/images/20211220091052_UpscYzKp3-0",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"images",
+						"20211220091052_UpscYzKp3-0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzAyZmM5NTk5ODIwZTdjNmE1NTAyYiIsInVzZXJuYW1lIjoicXVhbnRlZCIsImlhdCI6MTY0MDA4MDQ1MCwiZXhwIjoxNjQwMzM5NjUwLCJpc3MiOiJsb3JlbnpvYm90dGkuZ2l0aHViLmlvIn0.ZI_-0S70r64AkQZfHqvTdRI6YwgwwYdauN1tOlQ3MTI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "author",
+							"value": "mathik",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/mathik/Pictures/wipe.jpg"
+						},
+						{
+							"key": "contents",
+							"value": "questa è la mia opinione!!!!!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/private/post",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"private",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmU1NjkxNmU1MTgzODliZmQ2ZWZjNiIsInVzZXJuYW1lIjoiam9obl9kb3ciLCJpYXQiOjE2Mzk5MDUzNzksImV4cCI6MTY0MDE2NDU3OSwiaXNzIjoibG9yZW56b2JvdHRpLmdpdGh1Yi5pbyJ9.hELdaD8E8CP2hzuKa-_gm72vWcmKe6m4ZzreN5SIs4w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "author",
+							"value": "mathik",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/mathik/Pictures/international.png",
+							"disabled": true
+						},
+						{
+							"key": "contents",
+							"value": "hi im john once more",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/private/post/61bf061903ecefe3e1e7e328",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"private",
+						"post",
+						"61bf061903ecefe3e1e7e328"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzAyZmM5NTk5ODIwZTdjNmE1NTAyYiIsInVzZXJuYW1lIjoicXVhbnRlZCIsImlhdCI6MTYzOTk4NTEwNSwiZXhwIjoxNjQwMjQ0MzA1LCJpc3MiOiJsb3JlbnpvYm90dGkuZ2l0aHViLmlvIn0.ZJJSlyOInVWZQXsOXnjYRYMMvfHQSZIvVBkjjqvoWbY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/private/like/61c02fa4599820e7c6a5502a",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"private",
+						"like",
+						"61c02fa4599820e7c6a5502a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unlike post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzAyZmM5NTk5ODIwZTdjNmE1NTAyYiIsInVzZXJuYW1lIjoicXVhbnRlZCIsImlhdCI6MTYzOTk4NTEwNSwiZXhwIjoxNjQwMjQ0MzA1LCJpc3MiOiJsb3JlbnpvYm90dGkuZ2l0aHViLmlvIn0.ZJJSlyOInVWZQXsOXnjYRYMMvfHQSZIvVBkjjqvoWbY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/private/like/61c02fa4599820e7c6a5502a",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"private",
+						"like",
+						"61c02fa4599820e7c6a5502a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "follow user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmU1NGRkMmZhMzRlM2IzMGFkOTlhNiIsInVzZXJuYW1lIjoibWF0aGlrIiwiaWF0IjoxNjM5OTA0OTY5LCJleHAiOjE2NDAxNjQxNjksImlzcyI6ImxvcmVuem9ib3R0aS5naXRodWIuaW8ifQ.OzanokuU61uWFQxWW7o_LtjrbQ9fIz7y7rnVs-9Jzd8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/private/follow/quanted",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"private",
+						"follow",
+						"quanted"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unfollow user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmU1NGRkMmZhMzRlM2IzMGFkOTlhNiIsInVzZXJuYW1lIjoibWF0aGlrIiwiaWF0IjoxNjM5OTA0OTY5LCJleHAiOjE2NDAxNjQxNjksImlzcyI6ImxvcmVuem9ib3R0aS5naXRodWIuaW8ifQ.OzanokuU61uWFQxWW7o_LtjrbQ9fIz7y7rnVs-9Jzd8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/private/follow/john_dow",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"private",
+						"follow",
+						"john_dow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmYwNWY2MDNlY2VmZTNlMWU3ZTMyNyIsInVzZXJuYW1lIjoicXVhbnRlZCIsImlhdCI6MTYzOTkxMTc5NCwiZXhwIjoxNjQwMTcwOTk0LCJpc3MiOiJsb3JlbnpvYm90dGkuZ2l0aHViLmlvIn0.utXArTmQ7nHphsmD_JEEU2rvQW0W90qjVq7h0zX5b5w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contents\": \"i like it so much that i comment on it twice\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:80/private/comments/61bf1159e0ff3e9a97603d11",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"private",
+						"comments",
+						"61bf1159e0ff3e9a97603d11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmU1NGRkMmZhMzRlM2IzMGFkOTlhNiIsInVzZXJuYW1lIjoibWF0aGlrIiwiaWF0IjoxNjM5OTA2NDA3LCJleHAiOjE2NDAxNjU2MDcsImlzcyI6ImxvcmVuem9ib3R0aS5naXRodWIuaW8ifQ.sGiHgkXACaW5RLpadNfulOayBcRoLkIslhM0jTfDeDM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contents\": \"hey nice post!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:80/private/comments/61bf117ce0ff3e9a97603d12",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"private",
+						"comments",
+						"61bf117ce0ff3e9a97603d12"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -29,7 +29,7 @@ func NewStoreApi(s Store) StoreApi {
 	api.router = router
 	return api
 }
-w
+
 func (s StoreApi) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	start := time.Now()
 

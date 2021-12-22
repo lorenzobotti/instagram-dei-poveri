@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "c8b052d5-d3ab-4d88-ba9a-6d86c7c230a3",
+		"name": "bindb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/home/mathik/Desktop/sane_timetables/output.png"
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get record",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/20211218225025_IKv-Cl-X2cw",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"20211218225025_IKv-Cl-X2cw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete record",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/20211218144421_G9qVlLNtGKo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"20211218144421_G9qVlLNtGKo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
